@@ -1,6 +1,5 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 import tensorflow as tf
 from werkzeug.utils import secure_filename
 import cv2
@@ -19,6 +18,7 @@ import openpyxl
 
 app = Flask(__name__)
 CORS(app)
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 print("Num GPUs Available: ", len(tf.config.list_physical_devices('GPU')))
 
